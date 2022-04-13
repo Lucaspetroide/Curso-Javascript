@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM events</title>
+    <style>
+        div#area {
+
+            font: normal 20pt Arial;
+            background: rgb(42, 139, 42);
+            color: white;
+            width: 200px;
+            height: 200px;
+            line-height: 200px;
+            text-align: center;
+            border-radius: 30px;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" name="op" onclick="feliz()"><label name="op">Feliz</label>
+    <div id="area" onclick="clicar(), incrementCount()" onmouseenter="entrar()" onmouseout="sair()" >
+        interaja... 
+    </div>
+    <h1 id="bah">...</h1>
+    <script>
+        var cnt = 0
+        function clicar() {
+            var pp = document.getElementById("bah")
+            var txt = document.getElementById("text")
+            var a = window.document.getElementById("area")
+            cnt = ++cnt
+            a.style.background = "red"
+            a.innerText = `${cnt}AÍ!!`
+            pp.innerHTML = `Pra quê mais disso?? ${cnt}!!`
+        }
+        function feliz() {
+            cnt = 0
+            var pp = document.getElementById("bah")
+            var txt = document.getElementById("text")
+            var a = document.getElementById("area")
+            a.style.background = "blue"
+            pp.innerHTML = `Feliz ${cnt}`
+            txt.innerHTML = `Feliz ${cnt}`
+        }
+        function entrar() {
+            var a =document.getElementById("area")
+            a.innerText = `Entrou!! ${ctn}`
+            a.style.background = "blue"
+        }
+        function sair() {
+            var pp = document.getElementById("bah")
+            var a = document.getElementById("area")
+            a.innerText = `Valeu pelos ${cnt}!`
+            a.style.background = "green"
+            pp.innerHTML = `Pra quê isso?? ${cnt}!!!`
+        }
+    </script>
+</body>
+</html>
